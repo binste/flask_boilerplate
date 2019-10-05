@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>Hi! Welcome to Application</h1>
+<p>This is the start page of the application</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sd in somedimensions %}
+        <tr>
+            <td>{{ sd.id }}</td>
+            <td>{{ sd.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
