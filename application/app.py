@@ -3,9 +3,10 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Config
+from models import Base
 
 bootstrap = Bootstrap()
-db = SQLAlchemy()
+db = SQLAlchemy(model_class=Base)
 migrate = Migrate()
 
 
@@ -33,6 +34,3 @@ def register_blueprints(app):
     app.register_blueprint(main_bp)
     app.register_blueprint(api_bp)
     app.register_blueprint(errors_bp)
-
-
-from application import models

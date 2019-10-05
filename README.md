@@ -1,10 +1,11 @@
 # flask_boilerplate
-Lightweight Flask boilerplate. Contains no user authentication, but this could easily be added using flask-login or similar.
+Lightweight Flask boilerplate. Contains no user authentication, but this could easily be added using flask-login or similar. Furthermore, sqlalchemy models inherit from normal declarative base to make them usable outside of the flask application. You can still use the advantages of flask-sqlalchemy such as the session or the pagination support.
 
 Inspired by
 * [Flask Mega Tutorial by Miguel Grinberg](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 * [YouTube - Armin Ronacher, "Flask for Fun and Profit", PyBay2016](https://www.youtube.com/watch?v=1ByQhAM5c1I)
 * [Official flask documentation](https://flask.palletsprojects.com/en/1.1.x/)
+* [Flask GitHub issue #620 - Add docs about integrating pure SQLAlchemy](https://github.com/pallets/flask-sqlalchemy/pull/629/commits/b3120423b2adf195698bfaff94e386a220ac24f4#)
 * ...
 
 
