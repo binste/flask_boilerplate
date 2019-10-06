@@ -17,3 +17,4 @@ Inspired by
    2. `flask db migrate -m "Create db"`
    3. `flask db upgrade`
 4. Fill database with some fake data `python create_fake_data.py`
+5. `flask run`
