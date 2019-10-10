@@ -10,8 +10,8 @@ def heartbeat():
     return {"status": "ok"}
 
 
-@bp.route("/")
 @bp.route("/index")
+@bp.route("/")
 def index():
     somedimensions = db.session.query(SomeDimension).all()
     return render_template("index.html", title="Home", somedimensions=somedimensions)
