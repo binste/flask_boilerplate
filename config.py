@@ -9,3 +9,5 @@ class Config:
         self.TESTING = False
         self.SQLALCHEMY_TRACK_MODIFICATIONS = False
         self.SQLALCHEMY_DATABASE_URI = "sqlite:///" + str(self.base_dir / "database.db")
+        # Prevents caching of static files by browser. Useful for development
+        self.SEND_FILE_MAX_AGE_DEFAULT = 0

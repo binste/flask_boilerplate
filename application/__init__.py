@@ -1,11 +1,9 @@
 from flask import Flask
-from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Config
 from models import Base
 
-bootstrap = Bootstrap()
 db = SQLAlchemy(model_class=Base)
 migrate = Migrate()
 
@@ -21,7 +19,6 @@ def create_app(config_class=Config):
 
 
 def register_extensions(app):
-    bootstrap.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
 

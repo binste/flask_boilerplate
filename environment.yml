@@ -9,8 +9,7 @@ dependencies:
   - flask-sqlalchemy
   - flask-wtf
   - flask-migrate
+  - plotly
+  - numpy
   - pytest
   - pytest-flask
-  - pip
-  - pip:
-    - flask-bootstrap

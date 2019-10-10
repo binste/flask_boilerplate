@@ -6,6 +6,7 @@ Inspired by
 * [YouTube - Armin Ronacher, "Flask for Fun and Profit", PyBay2016](https://www.youtube.com/watch?v=1ByQhAM5c1I)
 * [Official flask documentation](https://flask.palletsprojects.com/en/1.1.x/)
 * [Flask GitHub issue #620 - Add docs about integrating pure SQLAlchemy](https://github.com/pallets/flask-sqlalchemy/pull/629/commits/b3120423b2adf195698bfaff94e386a220ac24f4#)
+* [Flask + Plotly Dashboard - Hepta Analytics Blog](https://blog.heptanalytics.com/2018/08/07/flask-plotly-dashboard/)
 * ...
 
 

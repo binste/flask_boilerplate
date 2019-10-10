@@ -1,22 +1,70 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-<h1>Hi! Welcome to Application</h1>
-<p>This is the start page of the application</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">name</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for sd in somedimensions %}
-        <tr>
-            <td>{{ sd.id }}</td>
-            <td>{{ sd.name }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="row">
+    <div class="col">
+        <h1>Hi! Welcome to Application</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>This is the start page of the application</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sd in somedimensions %}
+                <tr>
+                    <td>{{ sd.id }}</td>
+                    <td>{{ sd.name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et faucibus erat. Sed volutpat, justo eget
+        pharetra vehicula, nisi mi viverra massa, eu fringilla mi metus porttitor arcu. Nam quis blandit nulla. Mauris
+        venenatis dignissim quam, ac accumsan est rutrum feugiat. Morbi nec ornare ex. Curabitur quis imperdiet orci.
+        Aenean euismod ullamcorper felis sit amet placerat. Mauris vestibulum luctus blandit.
+
+        Maecenas luctus felis id tortor blandit auctor. Integer interdum malesuada nisl sit amet scelerisque. Vivamus
+        porta iaculis tellus, vel vulputate mauris viverra ut. Vestibulum nec posuere augue. Vivamus venenatis arcu est.
+        Aliquam erat volutpat. Aenean euismod arcu ac odio pulvinar tristique.
+
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec neque leo,
+        viverra a semper vitae, auctor ac est. Aenean in ligula neque. Donec viverra porttitor arcu sit amet facilisis.
+        Nunc a congue est, non aliquam dui. Integer lacinia molestie risus vitae fermentum. In ac neque non augue
+        tincidunt elementum id vel nunc. Nunc nec nibh vel erat posuere sollicitudin.
+    </div>
+    <div class="col">
+        <label> Choose the plot type:</label>
+        <select class="form-control" id='plot_type'>
+            <option value="Bar">Bar</option>
+            <option value="Scatter">Scatter</option>
+        </select>
+        <div class="chart" id="example_plot"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script src="{{ url_for('static', filename='js/update_graph.js') }}"></script>
+<script type="text/javascript">
+    var graph = {{ plot | safe}};
+    Plotly.plot('example_plot', graph, {});
+</script>
 {% endblock %}
