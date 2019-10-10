@@ -3,7 +3,7 @@ import json
 import numpy as np
 import plotly
 import plotly.graph_objects as go
-from flask import render_template, request
+from flask import render_template, request, url_for
 
 from application import db
 from application.main import bp
