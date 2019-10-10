@@ -2,7 +2,7 @@ from flask import render_template, request
 
 from application.api.errors import error_response as api_error_response
 from application.api import bp
-from application.app import db
+from application import db
 
 
 def wants_json_response():

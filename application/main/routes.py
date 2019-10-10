@@ -1,6 +1,6 @@
 from flask import render_template, request
 
-from application.app import db
+from application import db
 from application.main import bp
 from models import SomeDimension, InterestingFact
 

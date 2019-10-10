@@ -11,7 +11,7 @@ Inspired by
 
 ## Usage
 1. Install requirements from `environment.yml` and activate respective environment
-2. `export FLASK_APP="application.app:create_app"`
+2. `export FLASK_APP="application:create_app"`
 3. Set up database:
    1. `flask db init`
    2. `flask db migrate -m "Create db"`
