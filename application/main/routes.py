@@ -34,6 +34,12 @@ def facts():
     return render_template("facts.html", facts=facts)
 
 
+@bp.route("/facts_datatable")
+def facts_datatable():
+    facts = db.session.query(InterestingFact).all()
+    return render_template("facts_datatable.html", facts=facts)
+
+
 @bp.route("/plot")
 def change_plot_type():
     plot_type = request.args["selected"]

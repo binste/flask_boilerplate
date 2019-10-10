@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block app_content %}
+<div class="row">
+    <div class="col">
+        <h1>Some interesting facts</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table" id="facts_table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">name</th>
+                    <th scope="col">description</th>
+                    <th scope="col">some_dimension_id</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fact in facts %}
+                <tr>
+                    <td>{{ fact.id }}</td>
+                    <td>{{ fact.name }}</td>
+                    <td>{{ fact.description }}</td>
+                    <td>{{ fact.some_dimension_id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.js"></script>
+
+<script type="text/javascript" class="init">
+    $(document).ready(function () {
+        {
+            $('#facts_table').DataTable();
+        }
+    });
+</script>
+{% endblock %}
